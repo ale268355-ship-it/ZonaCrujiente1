@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zona Crujiente — Snacks que enamoran</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ENCABEZADO Y NAVEGACIÓN -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#inicio" class="brand">
+        <img src="img/LOGO.jpg" alt="Logo Zona Crujiente" class="logo-img">
+        <span class="brand-name">Zona Crujiente</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <nav class="nav-menu" id="navMenu">
+        <ul>
+          <li><a href="#inicio" class="nav-link">Inicio</a></li>
+          <li><a href="#menu" class="nav-link">Menú</a></li>
+          <li><a href="#favoritos" class="nav-link">Favoritos</a></li>
+          <li><a href="#promociones" class="nav-link">Promociones</a></li>
+          <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- SECCIÓN PRINCIPAL / HERO -->
+  <section id="inicio" class="hero">
+    <div class="hero-container">
+      <div class="hero-text">
+        <span class="badge">¡Bienvenidos!</span>
+        <h1>Zona Crujiente</h1>
+        <p class="slogan">"Snacks que enamoran"</p>
+        <p class="hero-desc">
+          Disfruta de las mejores botanas preparadas, snacks salados, postres deliciosos y bebidas refrescantes hechas con todo el sabor.
+        </p>
+        <div class="hero-buttons">
+          <a href="#menu" class="btn btn-primary">Descubre nuestro menú</a>
+          <a href="#contacto" class="btn btn-secondary">Haz tu pedido</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="img/DORILOCOS.jpeg" alt="Dorilocos Zona Crujiente" class="hero-img-styled">
+      </div>
+    </div>
+  </section>
+
+  <!-- MENÚ DE PRODUCTOS CON FILTROS -->
+  <section id="menu" class="menu-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Nuestro Menú</h2>
+        <p>Selecciona una categoría para explorar nuestros snacks y bebidas</p>
+      </div>
+
+      <!-- Filtros -->
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="todos">Todos</button>
+        <button class="filter-btn" data-filter="salados">Salados y Preparados</button>
+        <button class="filter-btn" data-filter="dulces">Dulces y Postres</button>
+        <button class="filter-btn" data-filter="bebidas">Bebidas</button>
+      </div>
+
+      <!-- Grid de Productos -->
+      <div class="products-grid">
+
+        <!-- Maruchan -->
+        <article class="product-card" data-category="salados" data-name="Maruchan Preparada">
+          <div class="card-img-wrapper">
+            <img src="img/MARUCHAN.jpg" alt="Maruchan Preparada">
+            <span class="category-tag">Salados</span>
+          </div>
+          <div class="card-content">
+            <h3>Maruchan Preparada</h3>
+            <p class="product-desc">Sopa Maruchan con papas, salsas de la casa, limón y un toque crujiente especial.</p>
+            <div class="card-footer">
+              <span class="price">$35.00</span>
+              <button class="btn-add" onclick="agregarAlPedido('Maruchan Preparada')">Agregar</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Papas Locas -->
+        <article class="product-card" data-category="salados" data-name="Papas Locas">
+          <div class="card-img-wrapper">
+            <img src="img/PAPAS LOCAS.jpg" alt="Papas Locas">
+            <span class="category-tag">Salados</span>
+          </div>
+          <div class="card-content">
+            <h3>Papas Locas</h3>
+            <p class="product-desc">Mezcla de papas crujientes con toppings salados, gomitas, salsas chamoy y limón.</p>
+            <div class="card-footer">
+              <span class="price">$60.00</span>
+              <button class="btn-add" onclick="agregarAlPedido('Papas Locas')">Agregar</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Dorilocos -->
+        <article class="product-card" data-category="salados" data-name="Dorilocos">
+          <div class="card-img-wrapper">
+            <img src="img/DORILOCOS.jpeg" alt="Dorilocos">
+            <span class="category-tag">Salados</span>
+          </div>
+          <div class="card-content">
+            <h3>Dorilocos</h3>
+            <p class="product-desc">La botana clásica preparada con cueritos, verdura fresca, cacahuates, chamoy y salsas.</p>
+            <div class="card-footer">
+              <span class="price">$50.00</span>
+              <button class="btn-add" onclick="agregarAlPedido('Dorilocos')">Agregar</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Mini Hotcakes -->
+        <article class="product-card" data-category="dulces" data-name="Mini Hotcakes">
+          <div class="card-img-wrapper">
+            <img src="img/MINIHOTCAKES.jpg" alt="Mini Hotcakes">
+            <span class="category-tag">Postres</span>
+          </div>
+          <div class="card-content">
+            <h3>Mini Hotcakes</h3>
+            <p class="product-desc">Suaves mini hotcakes recién hechos con toppings dulces a elegir (mermelada, chispas, jarabes).</p>
+            <div class="card-footer">
+              <span class="price">$45.00</span>
+              <button class="btn-add" onclick="agregarAlPedido('Mini Hotcakes')">Agregar</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Soda Italiana -->
+        <article class="product-card" data-category="bebidas" data-name="Soda Italiana">
+          <div class="card-img-wrapper">
+            <img src="img/SODA ITALIANA.jpg" alt="Soda Italiana">
+            <span class="category-tag">Bebidas</span>
+          </div>
+          <div class="card-content">
+            <h3>Soda Italiana</h3>
+            <p class="product-desc">Refrescante bebida con agua mineral, jarabe frutal de tu elección y hielo frapé.</p>
+            <div class="card-footer">
+              <span class="price">$50.00</span>
+              <button class="btn-add" onclick="agregarAlPedido('Soda Italiana')">Agregar</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Frappés -->
+        <article class="product-card" data-category="bebidas" data-name="Frappé">
+          <div class="card-img-wrapper">
+            <img src="img/FRAPPES.jpg" alt="Frappés">
+            <span class="category-tag">Bebidas</span>
+          </div>
+          <div class="card-content">
+            <h3>Frappé</h3>
+            <p class="product-desc">Bebida helada cremosita disponible en sabores dulces como café, galleta o chocolate.</p>
+            <div class="card-footer">
+              <span class="price">$75.00</span>
+              <button class="btn-add" onclick="agregarAlPedido('Frappé')">Agregar</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Slushie -->
+        <article class="product-card" data-category="bebidas" data-name="Slushie">
+          <div class="card-img-wrapper">
+            <img src="img/SLUCHIE.jpg" alt="Slushie">
+            <span class="category-tag">Bebidas</span>
+          </div>
+          <div class="card-content">
+            <h3>Slushie</h3>
+            <p class="product-desc">Granizado frutal helado ultra refrescante, ideal para acompañar tus snacks salados.</p>
+            <div class="card-footer">
+              <span class="price">$40.00</span>
+              <button class="btn-add" onclick="agregarAlPedido('Slushie')">Agregar</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS DESTACADOS / FAVORITOS -->
+  <section id="favoritos" class="featured-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Los Favoritos de Zona Crujiente</h2>
+        <p>Las combinaciones más pedidas por nuestros clientes</p>
+      </div>
+      <div class="featured-grid">
+        <div class="featured-card">
+          <img src="img/DORILOCOS.jpeg" alt="Dorilocos Especiales">
+          <div class="featured-info">
+            <h3>Dorilocos de la Casa</h3>
+            <p>Con la porción perfecta de crujiente, ácido y picante que te hará volver por más.</p>
+          </div>
+        </div>
+        <div class="featured-card">
+          <img src="img/MINIHOTCAKES.jpg" alt="Mini Hotcakes Especiales">
+          <div class="featured-info">
+            <h3>Mini Hotcakes Dulce Amor</h3>
+            <p>Esponjosos y listos para endulzar tu día con la mejor combinación de toppings.</p>
+          </div>
+        </div>
+        <div class="featured-card">
+          <img src="img/FRAPPES.jpg" alt="Frappé de Especialidad">
+          <div class="featured-info">
+            <h3>Frappé Especial</h3>
+            <p>El balance idóneo de frescura y cremosa dulzura en cada sorbo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMOCIONES Y COMBOS -->
+  <section id="promociones" class="promo-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Promociones y Combos</h2>
+        <p>Disfruta de más sabor a un precio especial</p>
+      </div>
+      <div class="promo-grid">
+        <div class="promo-card">
+          <div class="promo-tag">Combo Duo</div>
+          <h3>Combo Cruji-Salado</h3>
+          <p>1 Dorilocos o Papas Locas + 1 Soda Italiana o Slushie a elegir.</p>
+          <div class="promo-price">¡Pregunta por él!</div>
+          <button class="btn btn-primary" onclick="agregarAlPedido('Combo Cruji-Salado')">Pedir Promo</button>
+        </div>
+        <div class="promo-card highlight">
+          <div class="promo-tag">Especial</div>
+          <h3>Combo Dulce Enamorado</h3>
+          <p>1 Orden de Mini Hotcakes + 1 Frappé de sabor a tu elección.</p>
+          <div class="promo-price">¡Pregunta por él!</div>
+          <button class="btn btn-secondary" onclick="agregarAlPedido('Combo Dulce Enamorado')">Pedir Promo</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONOCE NUESTRO ESTABLECIMIENTO -->
+  <section id="nosotros" class="about-section">
+    <div class="container">
+      <div class="about-wrapper">
+        <div class="about-image">
+          <img src="img/ESTABLECIMIENTO.jpg" alt="Establecimiento Zona Crujiente">
+        </div>
+        <div class="about-text">
+          <h2>Conoce Nuestro Local</h2>
+          <p>
+            En <strong>Zona Crujiente</strong> preparamos cada botana y bebida al momento, cuidando la calidad e higiene para ofrecerte una experiencia única y deliciosa. ¡Ven a disfrutar con tus amigos o familia!
+          </p>
+          <div class="info-box">
+            <div class="info-item">
+              <strong>📍 Ubicación:</strong>
+              <span>Carr. Atlacomulco - San Miguel 50710</span>
+            </div>
+            <div class="info-item">
+              <strong>⏰ Horarios de Atención:</strong>
+              <span>Lunes a Jueves: 2:00 PM - 6:30 PM<br>Viernes y Sábado: 2:00 PM - 8:00 PM</span>
+            </div>
+          </div>
+          <a href="https://maps.app.goo.gl/uxB1g4xXk1s2z35X7" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Ver ubicación en Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN DE CONTACTO Y PEDIDOS WHATSAPP -->
+  <section id="contacto" class="contact-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Contacto y Pedidos</h2>
+        <p>¿Tienes antojo? Arma tu carrito y mándanos un mensaje directo</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-card">
+            <h3>Canales Oficiales</h3>
+            <p>Conéctate con nosotros de forma rápida a través de nuestros enlaces directos:</p>
+            <div class="action-buttons-group">
+              <a href="https://chat.whatsapp.com/C3R0oRiKQ5h2iZfOmIoskV?s=cl&p=i&mlu=4&ilr=4&iam=2" target="_blank" class="btn-action-wa">
+                💬 Unirse al Chat de WhatsApp
+              </a>
+              <a href="https://www.instagram.com/zona.crujiente?utm_source=qr&rpxt=NmN2bHNhM2M5YmRx" target="_blank" class="btn-action-ig">
+                📸 Síguenos en Instagram
+              </a>
+            </div>
+            <ul style="margin-top: 20px;">
+              <li><strong>📍 Ubicación:</strong> Carr. Atlacomulco - San Miguel 50710</li>
+              <li><strong>⏰ L-J:</strong> 2:00 PM - 6:30 PM</li>
+              <li><strong>⏰ V-S:</strong> 2:00 PM - 8:00 PM</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cart-box">
+          <h3>Tu Pedido Seleccionado</h3>
+          <p>Los productos que agregues desde el menú aparecerán aquí:</p>
+          <ul id="listaPedido" class="order-list">
+            <li class="empty-msg">Tu lista de pedido está vacía. Haz clic en "Agregar" en el menú.</li>
+          </ul>
+          <button id="btnEnviarWhatsApp" class="btn btn-whatsapp" onclick="enviarPedidoWhatsApp()">
+            📲 Enviar Pedido por WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <img src="img/LOGO.jpg" alt="Logo Zona Crujiente" class="footer-logo">
+        <span class="footer-name">Zona Crujiente</span>
+        <p class="footer-slogan">"Snacks que enamoran"</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#menu">Menú</a></li>
+          <li><a href="#promociones">Promociones</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Redes Sociales</h4>
+        <p>Mantente al tanto de nuestras ofertas y nuevos snacks.</p>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/zona.crujiente?utm_source=qr&rpxt=NmN2bHNhM2M5YmRx" target="_blank">Instagram Oficial</a>
+          <a href="https://chat.whatsapp.com/C3R0oRiKQ5h2iZfOmIoskV?s=cl&p=i&mlu=4&ilr=4&iam=2" target="_blank">Chat de WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Zona Crujiente. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
